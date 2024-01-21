@@ -4,8 +4,9 @@ import dotenv as dv
 
 
 def main(page: ft.Page):
-    data = dv.dotenv_values()
-    API_KEY = data["OPENWEATHER_DEV_API"]  # os.getenv("OPENWEATHER_DEV_API")
+    dv.load_dotenv()
+    API_KEY = os.getenv("OPENWEATHER_DEV_API")
+    page.appbar
     page.add(ft.SafeArea(ft.Text(API_KEY)))
 
 
