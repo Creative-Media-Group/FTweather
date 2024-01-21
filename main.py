@@ -1,10 +1,11 @@
 import flet as ft
 import os
-import dotenv
+import dotenv as dv
 
 
 def main(page: ft.Page):
-    API_KEY = #os.getenv("OPENWEATHER_DEV_API")
+    data = dv.dotenv_values()
+    API_KEY = data["OPENWEATHER_DEV_API"]  # os.getenv("OPENWEATHER_DEV_API")
     page.add(ft.SafeArea(ft.Text(API_KEY)))
 
 
