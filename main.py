@@ -6,7 +6,7 @@ import myweather as mr
 
 def main(page: ft.Page):
     page.title = "FTweather"
-    page.theme = ft.Theme(color_scheme_seed="red")
+    page.theme = ft.Theme(color_scheme_seed="white")
     page.update()
     page.appbar = ft.AppBar(title=ft.Text(page.title))
     dv.load_dotenv()
