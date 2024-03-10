@@ -5,24 +5,28 @@ import myweather as mr
 
 dv.load_dotenv()
 API_KEY = os.getenv("OPENWEATHER_DEV_API")
+weather = mr.MyWeather(api_key=API_KEY, lat=34, lon=34, setgraddegree="Grad")
 
+def weatherdialog(page, city, description):
+    dlg = ft.AlertDialog(open=True)
 
 def city(page, city, key=API_KEY):
-    weather = mr.MyWeather(api_key=API_KEY, lat=34, lon=34, setgraddegree="Grad")
     container = ft.Container(
         content=ft.Column(
             controls=[
                 ft.Icon(name=ft.icons.CLOUD),
                 ft.Text(value=weather.degreefunc()),
+                ft.Text(city)
             ],
             alignment="center",
-            spacing=10
+            spacing=6
         ),
         alignment=ft.alignment.center,
         border_radius=10,
         width=80,
-        height=80,
+        height=90,
         bgcolor=ft.colors.AMBER,
+        on_click=lambda _ : weatherdialog(page=page)
     )
     return container
 
