@@ -16,7 +16,7 @@ def main(page: ft.Page):
         container = ft.Container(
             content=ft.Column(
                 controls=[
-                    ft.Icon(name=ft.icons.CLOUD),
+                    ft.Icon(name=ft.Icons.CLOUD),
                     ft.Text(value=weather.degreefunc()),
                     ft.Text(city),
                 ],
@@ -27,7 +27,7 @@ def main(page: ft.Page):
             border_radius=10,
             width=80,
             height=90,
-            bgcolor=ft.colors.AMBER,
+            bgcolor=ft.Colors.AMBER,
             on_click=lambda e: i(e=e),
         )
 
