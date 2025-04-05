@@ -12,7 +12,7 @@ def main(page: ft.Page):
     def i(e):
         print(e)
 
-    def city(city, key=API_KEY):
+    def city(page, city, key=API_KEY):
         container = ft.Container(
             content=ft.Column(
                 controls=[
